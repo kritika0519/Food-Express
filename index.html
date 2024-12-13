@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodExpress - Your Favorite Food Delivered</title>
+    <meta name="description" content="Order food online from your favorite restaurants. Fast delivery, great deals, and a wide variety of cuisines.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://dummyimage.com/40x40/ff6b6b/ffffff&text=FE" alt="FoodExpress Logo" />
+                <span>FoodExpress</span>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for restaurants or dishes" id="searchInput">
+                <button id="searchButton">Search</button>
+            </div>
+            <div class="user-actions">
+                <button id="signupButton">Sign Up</button>
+                <button id="loginButton">Login</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="outlets" class="outlets-grid">
+            <div class="outlet-card">
+                <img src="https://dummyimage.com/150x150/4ecdc4/ffffff&text=Domino's" alt="Domino's Logo" />
+                <div class="outlet-card-content">
+                    <h3>Domino's</h3>
+                    <p>Delicious pizzas and sides</p>
+                    <button onclick="showMenu(1)">Explore Menu</button>
+                </div>
+            </div>
+            <div class="outlet-card">
+                <img src="https://dummyimage.com/150x150/45b7d1/ffffff&text=McDonald's" alt="McDonald's Logo" />
+                <div class="outlet-card-content">
+                    <h3>McDonald's</h3>
+                    <p>Classic burgers and fries</p>
+                    <button onclick="showMenu(2)">Explore Menu</button>
+                </div>
+            </div>
+            <div class="outlet-card">
+                <img src="https://dummyimage.com/150x150/ff6b6b/ffffff&text=KFC" alt="KFC Logo" />
+                <div class="outlet-card-content">
+                    <h3>KFC</h3>
+                    <p>Finger-lickin' good chicken</p>
+                    <button onclick="showMenu(3)">Explore Menu</button>
+                </div>
+            </div>
+            <div class="outlet-card">
+                <img src="https://dummyimage.com/150x150/f9844a/ffffff&text=Subway" alt="Subway Logo" />
+                <div class="outlet-card-content">
+                    <h3>Subway</h3>
+                    <p>Fresh and customizable sandwiches</p>
+                    <button onclick="showMenu(4)">Explore Menu</button>
+                </div>
+            </div>
+            <div class="outlet-card">
+                <img src="https://dummyimage.com/150x150/277da1/ffffff&text=Starbucks" alt="Starbucks Logo" />
+                <div class="outlet-card-content">
+                    <h3>Starbucks</h3>
+                    <p>Premium coffee and snacks</p>
+                    <button onclick="showMenu(5)">Explore Menu</button>
+                </div>
+            </div>
+            <div class="outlet-card">
+                <img src="https://dummyimage.com/150x150/577590/ffffff&text=Taco+Bell" alt="Taco Bell Logo" />
+                <div class="outlet-card-content">
+                    <h3>Taco Bell</h3>
+                    <p>Tasty Mexican-inspired fast food</p>
+                    <button onclick="showMenu(6)">Explore Menu</button>
+                </div>
+            </div>
+        </section>
+     </main>
+
+    <div id="cartIcon" class="cart-icon">
+        <span id="cartItemCount">0</span>
+        <i class="fas fa-shopping-cart" alt="Shopping Cart" ></i>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="store-locator">
+                <h3>Find a Store Near You</h3>
+                <div id="map"></div>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@foodexpress.com">info@foodexpress.com</a></p>
+                <p>Phone: <a href="tel:+917888679034">(+91) 7888679034</a></p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 FoodExpress. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Login/Signup -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="authForm"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Shopping Cart -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content"> <!-- Added cart-modal-content class -->
+            <span class="close">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <div id="cartTotal" class="cart-total"></div> <!-- Added class for styling -->
+            <button id="checkoutButton" class="checkout-button">Checkout</button> <!-- Added class for styling -->
+        </div>
+    </div>
+</body>
+</html>
